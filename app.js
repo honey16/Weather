@@ -1,7 +1,4 @@
 
-// api key : 82005d27a116c2880c8f0fcb866998a0
-// api key : ab582fa6a5af080b5878661ae372f385
-
 //Select Elements
 const iconElement = document.querySelector(".weather-icon");
 const tempElement = document.querySelector(".temperature-value p");
@@ -77,34 +74,20 @@ function celsiusToFahrenheit(temperature){
     return (temperature * 9/5) + 32;
 }
 
-//When user clicks on temperature element change unit
-// tempElement.addEventListener("click", function() {
-//     if (weather.temperature.value === undefined) return ;
-    
-//     if(weather.temperature.unit == "celsius"){
-//         let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
-//         fahrenheit = Math.floor(fahrenheit);
-
-//         tempElement.innerHTML = `${fahrenheit}&deg;<span>F</span>`;
-//         weather.temperature.unit == "fahrenheit";
-//     }else{
-//         tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-//         weather.temperature.unit = "celsius"
-//     }
-    
-// });
-
-tempElement.addEventListener("click", function(){
-    if(weather.temperature.value === undefined) return;
+// When user clicks on temperature element change unit
+tempElement.addEventListener("click", function() {
+    if (weather.temperature.value === undefined) return ;
     
     if(weather.temperature.unit == "celsius"){
         let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
         fahrenheit = Math.floor(fahrenheit);
-        
-        tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
+
+        tempElement.innerHTML = `${fahrenheit}&deg;<span>F</span>`;
         weather.temperature.unit = "fahrenheit";
     }else{
         tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
         weather.temperature.unit = "celsius"
     }
+    
 });
+
